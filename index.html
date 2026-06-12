@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WALLI — Premium Wallpaper Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== NAV 1 ========== -->
+<header id="nav1">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7" stroke="#888" stroke-width="2"/>
+      <path d="m16.5 16.5 4 4" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="search-input" placeholder="Nomi, rang, uslub, xona..." autocomplete="off">
+  </div>
+
+  <div id="logo">WALL<em>I</em></div>
+
+  <div class="nav1-actions">
+    <button class="n1-btn" id="lang-btn">UZ</button>
+    <button class="n1-btn" id="theme-btn" aria-label="Mavzu">🌙</button>
+    <button class="n1-btn" id="acc-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span id="acc-label">Hisob</span>
+    </button>
+    <button class="n1-btn sand" id="cart-btn" aria-label="Savat">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+      <span id="cart-label">Savat</span>
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+    <button id="hamburger" aria-label="Menyu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== NAV 2 ========== -->
+<nav id="nav2">
+  <div class="nav2-item">
+    <button class="nav2-btn" data-dd="dd-type">
+      Wallpaper
+      <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="dropdown" id="dd-type">
+      <a href="#" data-filter="Classic">Classic</a>
+      <a href="#" data-filter="Modern">Modern</a>
+      <a href="#" data-filter="3D">3D</a>
+      <a href="#" data-filter="Textured">Textured</a>
+      <a href="#" data-filter="Floral">Floral</a>
+    </div>
+  </div>
+  <div class="nav2-item">
+    <button class="nav2-btn" data-dd="dd-motif">
+      Motifs
+      <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="dropdown" id="dd-motif">
+      <a href="#" data-filter="Animals">Animals</a>
+      <a href="#" data-filter="Botanical">Botanical</a>
+      <a href="#" data-filter="Abstract">Abstract</a>
+      <a href="#" data-filter="Geometric">Geometric</a>
+    </div>
+  </div>
+  <div class="nav2-item">
+    <button class="nav2-btn" data-dd="dd-style">
+      Styles
+      <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="dropdown" id="dd-style">
+      <a href="#" data-filter="Minimalist">Minimalist</a>
+      <a href="#" data-filter="Bohemian">Bohemian</a>
+      <a href="#" data-filter="Scandinavian">Scandinavian</a>
+      <a href="#" data-filter="Industrial">Industrial</a>
+    </div>
+  </div>
+  <div class="nav2-item">
+    <button class="nav2-btn" data-dd="dd-colors">
+      Colors
+      <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="dropdown" id="dd-colors">
+      <a href="#" data-filter="Red"><span class="dot-clr" style="background:#e74c3c"></span> Red</a>
+      <a href="#" data-filter="Blue"><span class="dot-clr" style="background:#3498db"></span> Blue</a>
+      <a href="#" data-filter="Green"><span class="dot-clr" style="background:#27ae60"></span> Green</a>
+      <a href="#" data-filter="Beige"><span class="dot-clr" style="background:#d5c3a1"></span> Beige</a>
+      <a href="#" data-filter="Yellow"><span class="dot-clr" style="background:#f1c40f"></span> Yellow</a>
+      <a href="#" data-filter="Pink"><span class="dot-clr" style="background:#fd79a8"></span> Pink</a>
+      <a href="#" data-filter="Black"><span class="dot-clr" style="background:#2d3436"></span> Black</a>
+      <a href="#" data-filter="White"><span class="dot-clr" style="background:#dfe6e9; border:1px solid #ccc"></span> White</a>
+    </div>
+  </div>
+  <div class="nav2-item">
+    <button class="nav2-btn" data-dd="dd-rooms">
+      Rooms
+      <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="dropdown" id="dd-rooms">
+      <a href="#" data-filter="Living Room">Living Room</a>
+      <a href="#" data-filter="Bedroom">Bedroom</a>
+      <a href="#" data-filter="Kitchen">Kitchen</a>
+      <a href="#" data-filter="Bathroom">Bathroom</a>
+      <a href="#" data-filter="Office">Office</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== MOBILE MENU ========== -->
+<div id="mobile-menu">
+  <div class="mob-cat">Kategoriyalar</div>
+  <a class="mob-link" href="#" data-filter="Classic">Classic</a>
+  <a class="mob-link" href="#" data-filter="Modern">Modern</a>
+  <a class="mob-link" href="#" data-filter="Bohemian">Bohemian</a>
+  <a class="mob-link" href="#" data-filter="Scandinavian">Scandinavian</a>
+  <div class="mob-cat">Xonalar</div>
+  <a class="mob-link" href="#" data-filter="Living Room">Living Room</a>
+  <a class="mob-link" href="#" data-filter="Bedroom">Bedroom</a>
+  <a class="mob-link" href="#" data-filter="Kitchen">Kitchen</a>
+  <a class="mob-link" href="#" data-filter="Office">Office</a>
+  <div class="mob-cat">Ranglar</div>
+  <a class="mob-link" href="#" data-filter="Beige">Beige</a>
+  <a class="mob-link" href="#" data-filter="Blue">Blue</a>
+  <a class="mob-link" href="#" data-filter="Green">Green</a>
+  <a class="mob-link" href="#" data-filter="Pink">Pink</a>
+</div>
+
+<!-- ========== CAROUSEL ========== -->
+<section id="carousel" aria-label="Featured collections">
+  <div class="c-track" id="c-track"></div>
+  <button class="c-arrow" id="c-prev" aria-label="Oldingi">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="c-arrow" id="c-next" aria-label="Keyingi">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="c-dots" id="c-dots"></div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marquee-wrap">
+  <div class="m-track" id="m1"></div>
+</div>
+<div class="marquee-wrap">
+  <div class="m-track rev" id="m2"></div>
+</div>
+
+<!-- ========== PRODUCTS ========== -->
+<section id="products-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-label">Kolleksiya</div>
+        <h2 class="sec-title">Barcha <em>Devor Qog'ozlari</em></h2>
+        <div class="sec-count" id="prod-count"></div>
+      </div>
+    </div>
+    <div id="filter-bar"></div>
+    <div id="products-grid">
+      <div class="no-results" id="no-results">
+        <strong>Topilmadi</strong>
+        Boshqa kalit so'z bilan qidiring
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OUR WORKS ========== -->
+<section id="works-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-label">Portfolio</div>
+        <h2 class="sec-title">Bizning <em>Ishlarimiz</em></h2>
+      </div>
+    </div>
+    <div id="works-grid"></div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="f-logo">WALL<em>I</em></div>
+        <p class="f-desc">Premium devor qog'ozlari va interyer yechimlari. 2014-yildan beri 10,000+ interyer dizayn qildik.</p>
+      </div>
+      <div class="f-col">
+        <h4>Xizmatlar</h4>
+        <a href="#">Yetkazib berish</a>
+        <a href="#">O'rnatish xizmati</a>
+        <a href="#">Maslahat</a>
+        <a href="#">Namuna buyurtma</a>
+      </div>
+      <div class="f-col">
+        <h4>Qo'llab-quvvatlash</h4>
+        <a href="#">To'lov usullari</a>
+        <a href="#">Qaytarish siyosati</a>
+        <a href="#">Kafolat</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="f-col">
+        <h4>Bog'lanish</h4>
+        <p>📞 +998 71 200 10 10</p>
+        <p>📧 hello@walli.uz</p>
+        <p>📍 Toshkent, Mirzo Ulug'bek</p>
+        <p>🕐 Du–Sha: 9:00–19:00</p>
+        <button id="admin-btn" style="margin-top:16px">⚙ Admin panel</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 WALLI Studio. Barcha huquqlar himoyalangan.</span>
+      <div style="display:flex;gap:16px">
+        <a href="#">Maxfiylik</a>
+        <a href="#">Shartlar</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== CHAT ========== -->
+<button id="chat-fab" aria-label="Chat">💬</button>
+<div id="chat-window" role="dialog" aria-label="Yordam chat">
+  <div class="chat-hd">
+    <div class="chat-avatar">🏠</div>
+    <div class="chat-hd-info">
+      <h4>WALLI Yordam</h4>
+      <span>🟢 Onlayn — tez javob beramiz</span>
+    </div>
+    <span id="chat-x" role="button" aria-label="Yopish">✕</span>
+  </div>
+  <div id="chat-msgs">
+    <div class="cm bot">Salom! 👋 Qanday yordam bera olamiz?</div>
+  </div>
+  <div class="chat-faqs">
+    <div class="chat-faqs-label">Tez javoblar</div>
+    <button class="faq-chip" data-q="Yetkazib berish qancha?">📦 Yetkazib berish</button>
+    <button class="faq-chip" data-q="To'lov usullari?">💳 To'lov</button>
+    <button class="faq-chip" data-q="Qaytarish shartlari?">↩ Qaytarish</button>
+  </div>
+  <div class="chat-inp">
+    <input type="text" id="chat-input" placeholder="Xabar...">
+    <button id="chat-send" aria-label="Yuborish">➤</button>
+  </div>
+</div>
+
+<!-- ========== TOAST ========== -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== MODAL: ACCOUNT ===== -->
+<div class="modal-backdrop" id="mod-acc">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2 id="mod-acc-title">Kirish</h2>
+      <button class="modal-x" data-close="mod-acc">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div id="form-login">
+        <div class="fg"><label>Email</label><input type="email" placeholder="email@example.com"></div>
+        <div class="fg"><label>Parol</label><input type="password" placeholder="••••••••"></div>
+        <button class="btn-sand" onclick="demoLogin()">Kirish</button>
+        <div class="divider-or">yoki</div>
+        <button class="btn-outline" onclick="switchForm('register')">Ro'yxatdan o'tish</button>
+      </div>
+      <div id="form-register" style="display:none">
+        <div class="fg-row">
+          <div class="fg"><label>Ism</label><input type="text" placeholder="Isminigiz"></div>
+          <div class="fg"><label>Familiya</label><input type="text" placeholder="Familiyangiz"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="email@example.com"></div>
+        <div class="fg"><label>Parol</label><input type="password" placeholder="Parol kiriting"></div>
+        <button class="btn-sand" onclick="demoLogin()">Ro'yxatdan o'tish</button>
+        <div class="divider-or">yoki</div>
+        <button class="btn-outline" onclick="switchForm('login')">Hisobga kirish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: CART ===== -->
+<div class="modal-backdrop" id="mod-cart">
+  <div class="modal modal-lg">
+    <div class="modal-hd">
+      <h2>Savat</h2>
+      <button class="modal-x" data-close="mod-cart">✕</button>
+    </div>
+    <div class="modal-bd" id="cart-body"></div>
+  </div>
+</div>
+
+<!-- ===== MODAL: ORDER ===== -->
+<div class="modal-backdrop" id="mod-order">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2>Buyurtma berish</h2>
+      <button class="modal-x" data-close="mod-order">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="fg-row">
+        <div class="fg"><label>Ism</label><input type="text" id="o-fname" placeholder="Isminigiz"></div>
+        <div class="fg"><label>Familiya</label><input type="text" id="o-lname" placeholder="Familiyangiz"></div>
+      </div>
+      <div class="fg"><label>Telefon</label><input type="tel" id="o-phone" placeholder="+998 xx xxx xx xx"></div>
+      <div class="fg"><label>Manzil</label><input type="text" id="o-addr" placeholder="Shahar, ko'cha, uy raqami"></div>
+      <button class="btn-sand" onclick="placeOrder()">✓ Buyurtmani tasdiqlash</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: ADMIN ===== -->
+<div class="modal-backdrop" id="mod-admin">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2>Admin Panel</h2>
+      <button class="modal-x" data-close="mod-admin">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="admin-cards">
+        <div class="adm-card" onclick="adminProduct()">
+          <div class="adm-icon">🖼</div>
+          <h3>Yangi Wallpaper</h3>
+          <p>Mahsulot qo'shish</p>
+        </div>
+        <div class="adm-card" onclick="adminSlide()">
+          <div class="adm-icon">🎠</div>
+          <h3>Yangi Slayd</h3>
+          <p>Karuselga qo'shish</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
