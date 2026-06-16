@@ -64,49 +64,63 @@ const validCoupons = {
 
 // ─── LocalStorage: Products ──────────────────────────────
 
-function getProducts() {
-  try {
-    const data = localStorage.getItem('walli_products');
-    if (data) return JSON.parse(data);
-  } catch (e) { /* ignore */ }
-  // Default: har bir tur uchun 5–10 ta namuna mahsulot
-  const prods = [];
-  PRODUCT_TYPES.forEach((type, idx) => {
+// ===== MAHSULOTLAR BOSHLANG'ICH =====
+let wallpapers = [];
+
+// ===== DEFAULT MAHSULOTLARNI YARATISH =====
+function createDefaultProducts() {
     const prods = [];
-const MOTIF_LIST = ['Animals', 'Botanical', 'Abstract', 'Geometric', 'Floral', 'Textured'];
-const STYLE_LIST = ['Minimalist', 'Bohemian', 'Scandinavian', 'Industrial', 'Classic', 'Modern'];
-const COLOR_LIST = ['Red', 'Blue', 'Green', 'Beige', 'Yellow', 'Pink', 'Black', 'White'];
-const ROOM_LIST = ['Living Room', 'Bedroom', 'Kitchen', 'Bathroom', 'Office'];
-
-PRODUCT_TYPES.forEach((type, idx) => {
-  const count = 5 + (idx * 3) % 8;
-  for (let i = 0; i < count; i++) {
-    const seed = TYPE_SEEDS[type] || 'pdefault';
-    prods.push({
-      id: Date.now() + idx * 1000 + i,
-      type: type,
-      name: `${type} №${i+1}`,
-      price: 120000 + Math.floor(Math.random() * 180000),
-      seed: `${seed}_${i}`,
-      desc: `${type} uslubidagi devor qog'ozi. Yuqori sifatli material.`,
-      image: `https://picsum.photos/seed/${seed}_${i}/600/450`,
-      motif: MOTIF_LIST[i % MOTIF_LIST.length],
-      style: STYLE_LIST[i % STYLE_LIST.length],
-      color: COLOR_LIST[i % COLOR_LIST.length],
-      room: ROOM_LIST[i % ROOM_LIST.length]
+    const MOTIF_LIST = ['Animals','Botanical','Abstract','Geometric','Floral','Textured'];
+    const STYLE_LIST = ['Minimalist','Bohemian','Scandinavian','Industrial','Classic','Modern'];
+    const COLOR_LIST = ['Red','Blue','Green','Beige','Yellow','Pink','Black','White'];
+    const ROOM_LIST = ['Living Room','Bedroom','Kitchen','Bathroom','Office'];
+    
+    PRODUCT_TYPES.forEach((type, idx) => {
+        const count = 5 + (idx * 3) % 8;
+        for (let i = 0; i < count; i++) {
+            const seed = TYPE_SEEDS[type] || 'pdefault';
+            prods.push({
+                id: Date.now() + idx * 1000 + i,
+                type: type,
+                name: `${type} №${i+1}`,
+                price: 120000 + Math.floor(Math.random() * 180000),
+                seed: `${seed}_${i}`,
+                desc: `${type} uslubidagi devor qog'ozi. Yuqori sifatli material.`,
+                image: `https://picsum.photos/seed/${seed}_${i}/600/450`,
+                motif: MOTIF_LIST[i % MOTIF_LIST.length],
+                style: STYLE_LIST[i % STYLE_LIST.length],
+                color: COLOR_LIST[i % COLOR_LIST.length],
+                room: ROOM_LIST[i % ROOM_LIST.length]
+            });
+        }
     });
-  }
-});
-  });
-  localStorage.setItem('walli_products', JSON.stringify(prods));
-  return prods;
+    localStorage.setItem('walli_products', JSON.stringify(prods));
+    return prods;
 }
 
-function saveProducts(prods) {
-  localStorage.setItem('walli_products', JSON.stringify(prods));
+// ===== MAHSULOTLARNI YUKLASH =====
+function getProducts() {
+    try {
+        const data = localStorage.getItem('walli_products');
+        if (data) {
+            const parsed = JSON.parse(data);
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                // Har bir mahsulotda 'type' maydoni borligini tekshiramiz
+                const valid = parsed.every(p => p.type && typeof p.type === 'string');
+                if (valid) {
+                    return parsed;
+                }
+            }
+        }
+    } catch (e) {
+        console.warn('LocalStorage o‘qishda xatolik:', e);
+    }
+    // Agar localStorage da ma'lumot bo'lmasa yoki noto'g'ri bo'lsa, default yaratamiz
+    return createDefaultProducts();
 }
 
-let wallpapers = getProducts();
+// ===== GLOBAL O‘ZGARUVCHI =====
+wallpapers = getProducts();
 
 // ─── Render Product Types ────────────────────────────────
 
