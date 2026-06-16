@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WALLI — Premium Wallpaper Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========== NAV 1 ========== -->
+  <header id="nav1">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#888" stroke-width="2"/>
+        <path d="m16.5 16.5 4 4" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search-input" placeholder="Nomi, rang, uslub, xona..." autocomplete="off">
+    </div>
+    <div id="logo">WALL<em>I</em></div>
+    <div class="nav1-actions">
+      <button class="n1-btn" id="theme-btn" aria-label="Mavzu">🌙</button>
+      <button class="n1-btn" id="wishlist-btn">
+        ❤️ <span id="wishlist-label">Sevimlilar</span>
+        <span class="wishlist-badge" id="wishlist-badge">0</span>
+      </button>
+      <button class="n1-btn sand" id="cart-btn" aria-label="Savat">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span id="cart-label">Savat</span>
+        <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+      <button id="hamburger" aria-label="Menyu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+ <!-- ========== NAV 2 ========== -->
+<nav id="nav2">
+    <!-- Wallpaper -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-type">
+        Wallpaper
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-type">
+        <a href="#" data-filter="Classic">Classic</a>
+        <a href="#" data-filter="Modern">Modern</a>
+        <a href="#" data-filter="3D">3D</a>
+        <a href="#" data-filter="Textured">Textured</a>
+        <a href="#" data-filter="Floral">Floral</a>
+      </div>
+    </div>
+
+    <!-- Motifs -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-motif">
+        Motifs
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-motif">
+        <a href="#" data-filter="Animals">Animals</a>
+        <a href="#" data-filter="Botanical">Botanical</a>
+        <a href="#" data-filter="Abstract">Abstract</a>
+        <a href="#" data-filter="Geometric">Geometric</a>
+      </div>
+    </div>
+
+    <!-- Styles -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-style">
+        Styles
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-style">
+        <a href="#" data-filter="Minimalist">Minimalist</a>
+        <a href="#" data-filter="Bohemian">Bohemian</a>
+        <a href="#" data-filter="Scandinavian">Scandinavian</a>
+        <a href="#" data-filter="Industrial">Industrial</a>
+      </div>
+    </div>
+
+    <!-- Colors -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-colors">
+        Colors
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-colors">
+        <a href="#" data-filter="Red"><span class="dot-clr" style="background:#e74c3c"></span> Red</a>
+        <a href="#" data-filter="Blue"><span class="dot-clr" style="background:#3498db"></span> Blue</a>
+        <a href="#" data-filter="Green"><span class="dot-clr" style="background:#27ae60"></span> Green</a>
+        <a href="#" data-filter="Beige"><span class="dot-clr" style="background:#d5c3a1"></span> Beige</a>
+        <a href="#" data-filter="Yellow"><span class="dot-clr" style="background:#f1c40f"></span> Yellow</a>
+        <a href="#" data-filter="Pink"><span class="dot-clr" style="background:#fd79a8"></span> Pink</a>
+        <a href="#" data-filter="Black"><span class="dot-clr" style="background:#2d3436"></span> Black</a>
+        <a href="#" data-filter="White"><span class="dot-clr" style="background:#dfe6e9; border:1px solid #ccc"></span> White</a>
+      </div>
+    </div>
+
+    <!-- Rooms -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-rooms">
+        Rooms
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-rooms">
+        <a href="#" data-filter="Living Room">Living Room</a>
+        <a href="#" data-filter="Bedroom">Bedroom</a>
+        <a href="#" data-filter="Kitchen">Kitchen</a>
+        <a href="#" data-filter="Bathroom">Bathroom</a>
+        <a href="#" data-filter="Office">Office</a>
+      </div>
+    </div>
+
+    <!-- Contacts -->
+    <div class="nav2-item">
+      <button class="nav2-btn" data-dd="dd-contacts">
+        📞 Bog'lanish
+        <svg class="nav2-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dropdown" id="dd-contacts">
+        <a href="https://t.me/yourchannel" target="_blank">📱 Telegram</a>
+        <a href="https://instagram.com/yourpage" target="_blank">📸 Instagram</a>
+        <a href="#">📍 Toshkent, Mirzo Ulug‘bek</a>
+        <a href="tel:+998712001010">📞 +998 71 200 10 10</a>
+      </div>
+    </div>
+</nav>
+  <!-- ========== MOBILE MENU ========== -->
+  <div id="mobile-menu">
+    <div class="mob-cat">Mahsulot turlari</div>
+    <div id="mob-type-list"></div>
+    <div class="mob-cat">Bog'lanish</div>
+    <a class="mob-link" href="https://t.me/yourchannel" target="_blank">📱 Telegram</a>
+    <a class="mob-link" href="https://instagram.com/yourpage" target="_blank">📸 Instagram</a>
+    <a class="mob-link" href="tel:+998712001010">📞 +998 71 200 10 10</a>
+  </div>
+
+  <!-- ========== CAROUSEL ========== -->
+  <section id="carousel" aria-label="Featured collections">
+    <div class="c-track" id="c-track"></div>
+    <button class="c-arrow" id="c-prev" aria-label="Oldingi">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="c-arrow" id="c-next" aria-label="Keyingi">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="c-dots" id="c-dots"></div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee-wrap"><div class="m-track" id="m1"></div></div>
+  <div class="marquee-wrap"><div class="m-track rev" id="m2"></div></div>
+
+  <!-- ========== PRODUCT TYPES ========== -->
+  <section id="products-section">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <div class="sec-label">Kolleksiya</div>
+          <h2 class="sec-title">Mahsulot <em>Turlari</em></h2>
+          <div class="sec-count" id="prod-count"></div>
+        </div>
+      </div>
+      <div id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== ORDER PROCESS ========== -->
+  <section id="order-section">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <div class="sec-label">Buyurtma</div>
+          <h2 class="sec-title">Qanday <em>Zakaz Beriladi</em></h2>
+        </div>
+      </div>
+      <div class="order-steps" id="order-steps">
+        <div class="order-step active" data-step="0">
+          <div class="step-icon">📞</div>
+          <div class="step-label">Bog'lanish</div>
+          <div class="step-desc">Biz bilan aloqa</div>
+        </div>
+        <div class="order-step" data-step="1">
+          <div class="step-icon">🖼️</div>
+          <div class="step-label">Rasm tanlash</div>
+          <div class="step-desc">Dizaynni tanlang</div>
+        </div>
+        <div class="order-step" data-step="2">
+          <div class="step-icon">📐</div>
+          <div class="step-label">Razmerlar</div>
+          <div class="step-desc">O'lchamni kiriting</div>
+        </div>
+        <div class="order-step" data-step="3">
+          <div class="step-icon">✅</div>
+          <div class="step-label">Tasdiqlash</div>
+          <div class="step-desc">Buyurtmani tasdiqlang</div>
+        </div>
+        <div class="order-step" data-step="4">
+          <div class="step-icon">🚚</div>
+          <div class="step-label">Yetkazib berish</div>
+          <div class="step-desc">Yetkazib beramiz</div>
+        </div>
+        <div class="order-step" data-step="5">
+          <div class="step-icon">🔧</div>
+          <div class="step-label">O'rnatish</div>
+          <div class="step-desc">O'rnatib beramiz</div>
+        </div>
+        <div class="order-step" data-step="6">
+          <div class="step-icon">🎉</div>
+          <div class="step-label">Tayyor</div>
+          <div class="step-desc">Natijadan zavqlaning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CUSTOMER REVIEWS ========== -->
+  <section id="reviews-section">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <div class="sec-label">Fikrlar</div>
+          <h2 class="sec-title">Mijozlar <em>Nima Deydi</em></h2>
+        </div>
+      </div>
+      <div class="reviews-grid" id="reviews-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== INSTALL VIDEO ========== -->
+  <section id="install-section">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <div class="sec-label">Video Qo'llanma</div>
+          <h2 class="sec-title">Devor Qog'ozi <em>Qanday Yopishtiriladi</em></h2>
+        </div>
+      </div>
+      <div class="video-wrapper" id="video-wrapper">
+        <video id="install-video" muted playsinline preload="metadata" poster="https://picsum.photos/seed/video_poster/800/450">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <div class="play-overlay" id="play-overlay">
+          <div class="play-icon">▶</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <!-- 1-ustun: Logo -->
+      <div class="f-col">
+        <div class="f-logo">WALL<em>I</em></div>
+        <p class="f-desc">Premium devor qog'ozlari va interyer yechimlari. 2014-yildan beri 10,000+ interyer dizayn qildik.</p>
+      </div>
+
+      <!-- 2-ustun: Xizmatlar -->
+      <div class="f-col">
+        <h4>Xizmatlar</h4>
+        <a href="#">Yetkazib berish</a>
+        <a href="#">O'rnatish xizmati</a>
+        <a href="#">Maslahat</a>
+        <a href="#">Namuna buyurtma</a>
+      </div>
+
+      <!-- 3-ustun: Manzil (faqat xarita) -->
+      <div class="f-col">
+        <h4>Manzil</h4>
+        <div class="map-placeholder" style="height:200px;">
+          <iframe 
+            src="https://yandex.uz/map-widget/v1/?ll=69.240%2C41.312&z=12" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- 4-ustun: Contact -->
+      <div class="f-col">
+        <h4>Bog‘lanish</h4>
+        <a href="https://t.me/yourchannel" target="_blank" class="f-social">📱 Telegram</a>
+        <a href="https://instagram.com/yourpage" target="_blank" class="f-social">📸 Instagram</a>
+        <a href="tel:+998712001010" class="f-social">📞 +998 71 200 10 10</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 WALLI Studio. Barcha huquqlar himoyalangan.</span>
+      <div style="display:flex;gap:16px">
+        <a href="#">Maxfiylik</a>
+        <a href="#">Shartlar</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- ========== CHAT ========== -->
+  <button id="chat-fab" aria-label="Chat">💬</button>
+  <div id="chat-window" role="dialog" aria-label="Yordam chat">
+    <div class="chat-hd">
+      <div class="chat-avatar">🏠</div>
+      <div class="chat-hd-info">
+        <h4>WALLI Yordam</h4>
+        <span>🟢 Onlayn — tez javob beramiz</span>
+      </div>
+      <span id="chat-x" role="button" aria-label="Yopish">✕</span>
+    </div>
+    <div id="chat-msgs">
+      <div class="cm bot">Salom! 👋 Qanday yordam bera olamiz?</div>
+    </div>
+    <div class="chat-faqs">
+      <div class="chat-faqs-label">Tez javoblar</div>
+      <button class="faq-chip" data-q="Yetkazib berish qancha?">📦 Yetkazib berish</button>
+      <button class="faq-chip" data-q="To'lov usullari?">💳 To'lov</button>
+      <button class="faq-chip" data-q="Qaytarish shartlari?">↩ Qaytarish</button>
+    </div>
+    <div class="chat-inp">
+      <input type="text" id="chat-input" placeholder="Xabar...">
+      <button id="chat-send" aria-label="Yuborish">➤</button>
+    </div>
+  </div>
+
+  <!-- ========== OPERATOR POPUP ========== -->
+  <div id="chat-welcome-popup" class="chat-welcome-popup" style="display:none;">
+    <div class="popup-inner">
+      <div class="operator-avatar">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Operator">
+      </div>
+      <div class="operator-info">
+        <div class="operator-name">Shahnoza</div>
+        <div class="operator-message">Sizga qanday yordam bera olaman? 😊</div>
+      </div>
+      <button class="popup-close">✕</button>
+    </div>
+    <div class="popup-tail"></div>
+  </div>
+
+  <!-- ========== SCROLL TOP ========== -->
+  <button id="scroll-top" class="scroll-top" aria-label="Sahifa boshiga o‘tish">↑</button>
+
+  <!-- ========== TOAST ========== -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ========== PRODUCT POPUP ========== -->
+  <div class="product-popup-overlay" id="product-popup">
+    <div class="product-popup">
+      <button class="popup-close" id="pp-close">✕</button>
+      <div id="pp-content"></div>
+    </div>
+  </div>
+
+  <!-- ========== VIDEO POPUP ========== -->
+  <div class="video-popup-overlay" id="video-popup">
+    <div class="video-popup">
+      <button class="vp-close" id="vp-close">✕</button>
+      <video id="vp-video" controls playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+      <div class="vp-controls">
+        <button id="vp-play">▶ Play</button>
+        <button id="vp-stop">⏹ Stop</button>
+        <span class="vp-time" id="vp-time">0:00 / 0:00</span>
+        <input type="range" id="vp-progress" value="0" step="0.01">
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL: CART ========== -->
+  <div class="modal-backdrop" id="mod-cart">
+    <div class="modal modal-lg">
+      <div class="modal-hd">
+        <h2>Savat</h2>
+        <button class="modal-x" data-close="mod-cart">✕</button>
+      </div>
+      <div class="modal-bd" id="cart-body"></div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL: WISHLIST ========== -->
+  <div class="modal-backdrop" id="mod-wishlist">
+    <div class="modal modal-lg">
+      <div class="modal-hd">
+        <h2>❤️ Sevimlilar</h2>
+        <button class="modal-x" data-close="mod-wishlist">✕</button>
+      </div>
+      <div class="modal-bd" id="wishlist-body"></div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL: ORDER ========== -->
+  <div class="modal-backdrop" id="mod-order">
+    <div class="modal">
+      <div class="modal-hd">
+        <h2>Buyurtma berish</h2>
+        <button class="modal-x" data-close="mod-order">✕</button>
+      </div>
+      <div class="modal-bd">
+        <div class="fg-row">
+          <div class="fg"><label>Ism</label><input type="text" id="o-fname" placeholder="Ismingiz"></div>
+          <div class="fg"><label>Familiya</label><input type="text" id="o-lname" placeholder="Familiyangiz"></div>
+        </div>
+        <div class="fg"><label>Telefon</label><input type="tel" id="o-phone" placeholder="+998 xx xxx xx xx"></div>
+        <div class="fg"><label>Manzil</label><input type="text" id="o-addr" placeholder="Shahar, ko'cha, uy raqami"></div>
+        <button class="btn-sand" onclick="placeOrder()">✓ Buyurtmani tasdiqlash</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
